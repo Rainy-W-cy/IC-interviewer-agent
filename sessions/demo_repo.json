@@ -1,0 +1,63 @@
+{
+  "session_id": "session-eed319568fbd",
+  "inputs": {
+    "resume_path": "examples/resume.md",
+    "repo_path": "./examples/candidate_repo",
+    "role": "",
+    "file_type": "md"
+  },
+  "resume": {
+    "candidate_name": "RISC-V CPU",
+    "skills": [
+      "RISC-V",
+      "AXI",
+      "Verilog",
+      "SystemVerilog"
+    ],
+    "projects": [
+      {
+        "name": "AXI Interconnect",
+        "summary": "负责 AXI slave 接口与简单互联设计，完成基本读写通路联调。",
+        "claims": [
+          "负责 AXI slave 接口与简单互联设计，完成基本读写通路联调。"
+        ],
+        "keywords": [
+          "AXI"
+        ]
+      }
+    ]
+  },
+  "profile": {
+    "industry": "Digital IC / SoC",
+    "focus": [
+      "Digital Design"
+    ],
+    "secondary_focus": [],
+    "question_mix": {
+      "project": 0.6,
+      "fundamentals": 0.4
+    },
+    "reasons": [
+      "Matched keywords for Digital Design: risc-v, axi, rtl, verilog"
+    ]
+  },
+  "confirmed": false,
+  "repo_index": {
+    "files": [
+      "rtl/cpu_top.sv"
+    ],
+    "symbols": [
+      "rtl/cpu_top.sv:cpu_top"
+    ],
+    "topics": [],
+    "indexed": true,
+    "file_count": 1,
+    "sample_files": [
+      "rtl/cpu_top.sv"
+    ],
+    "repo_path": "examples/candidate_repo"
+  },
+  "questions": [],
+  "qa_log": [],
+  "report_path": ""
+}

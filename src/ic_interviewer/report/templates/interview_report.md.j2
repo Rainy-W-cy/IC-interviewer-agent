@@ -1,0 +1,149 @@
+{% if language == "en" -%}
+# IC Mock Interview Report
+
+## 1. Candidate Profile
+- Resume path: {{ session.inputs.get("resume_path", "") }}
+- Repo path: {{ session.inputs.get("repo_path", "") }}
+- Direction: {{ session.profile.industry if session.profile else "" }}
+- Focus: {{ ((session.profile.focus + session.profile.secondary_focus) | join(", ")) if session.profile else "" }}
+- Question mix: {{ session.profile.question_mix if session.profile and session.profile.question_mix else "" }}
+
+## 2. Project Summary
+{% for project in session.resume.projects if session.resume %}
+- {{ project.name }}
+  - Summary: {{ project.summary }}
+  - Claims:
+{% for claim in project.claims %}
+    - {{ claim }}
+{% endfor %}
+{% endfor %}
+
+## 3. Interview Log
+{% for qa in session.qa_log %}
+### Q{{ loop.index }} [{{ qa.question.type|title }}] - {{ qa.question.project }}
+**Question**
+{{ qa.question.question }}
+
+**Candidate Answer**
+{{ qa.answer }}
+
+**Anchors**
+{% if qa.evaluation and qa.evaluation.anchors %}
+{% for anchor in qa.evaluation.anchors %}
+- {{ anchor }}
+{% endfor %}
+{% else %}
+- N/A
+{% endif %}
+
+**Evaluation**
+- Summary: {{ qa.evaluation.summary if qa.evaluation else "" }}
+- Strengths:
+{% if qa.evaluation and qa.evaluation.strengths %}
+{% for strength in qa.evaluation.strengths %}
+  - {{ strength }}
+{% endfor %}
+{% else %}
+  - N/A
+{% endif %}
+- Gaps:
+{% if qa.evaluation and qa.evaluation.gaps %}
+{% for gap in qa.evaluation.gaps %}
+  - {{ gap }}
+{% endfor %}
+{% else %}
+  - N/A
+{% endif %}
+
+**Standard Answer**
+{{ qa.evaluation.standard_answer if qa.evaluation else "" }}
+
+**Memorization Version**
+{{ qa.evaluation.memorization_answer if qa.evaluation else "" }}
+
+{% endfor %}
+## 4. Overall Feedback
+- Strengths:
+{% for item in overall_feedback.strengths %}
+  - {{ item }}
+{% endfor %}
+- Gaps:
+{% for item in overall_feedback.gaps %}
+  - {{ item }}
+{% endfor %}
+ - Recommendation: {{ overall_feedback.recommendation }}
+{% else -%}
+# 集成电路模拟面试报告
+
+## 一、候选人画像
+- 简历路径: {{ session.inputs.get("resume_path", "") }}
+- 项目仓库路径: {{ session.inputs.get("repo_path", "") }}
+- 推断方向: {{ session.profile.industry if session.profile else "" }}
+- 侧重点: {{ ((session.profile.focus + session.profile.secondary_focus) | join(", ")) if session.profile else "" }}
+- 题目分布: {{ session.profile.question_mix if session.profile and session.profile.question_mix else "" }}
+
+## 二、项目摘要
+{% for project in session.resume.projects if session.resume %}
+- {{ project.name }}
+  - 项目简介: {{ project.summary }}
+  - 关键主张:
+{% for claim in project.claims %}
+    - {{ claim }}
+{% endfor %}
+{% endfor %}
+
+## 三、面试问答记录
+{% for qa in session.qa_log %}
+### Q{{ loop.index }} [{{ qa.question.type|title }}] - {{ qa.question.project }}
+**问题**
+{{ qa.question.question }}
+
+**候选人回答**
+{{ qa.answer }}
+
+**锚点**
+{% if qa.evaluation and qa.evaluation.anchors %}
+{% for anchor in qa.evaluation.anchors %}
+- {{ anchor }}
+{% endfor %}
+{% else %}
+- N/A
+{% endif %}
+
+**点评**
+- 总结: {{ qa.evaluation.summary if qa.evaluation else "" }}
+- 优势:
+{% if qa.evaluation and qa.evaluation.strengths %}
+{% for strength in qa.evaluation.strengths %}
+  - {{ strength }}
+{% endfor %}
+{% else %}
+  - N/A
+{% endif %}
+- 不足:
+{% if qa.evaluation and qa.evaluation.gaps %}
+{% for gap in qa.evaluation.gaps %}
+  - {{ gap }}
+{% endfor %}
+{% else %}
+  - N/A
+{% endif %}
+
+**参考标准答案**
+{{ qa.evaluation.standard_answer if qa.evaluation else "" }}
+
+**面试背诵版**
+{{ qa.evaluation.memorization_answer if qa.evaluation else "" }}
+
+{% endfor %}
+## 四、总体建议
+- 总体优势:
+{% for item in overall_feedback.strengths %}
+  - {{ item }}
+{% endfor %}
+- 主要短板:
+{% for item in overall_feedback.gaps %}
+  - {{ item }}
+{% endfor %}
+- 建议: {{ overall_feedback.recommendation }}
+{% endif -%}

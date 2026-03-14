@@ -1,0 +1,12 @@
+.venv/
+.pytest_cache/
+__pycache__/
+*.pyc
+
+out/
+backup_zh_patch/
+
+SKILL.md
+
+.env
+.env.local

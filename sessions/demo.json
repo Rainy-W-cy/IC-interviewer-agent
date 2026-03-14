@@ -1,0 +1,101 @@
+{
+  "session_id": "session-0b709794c5f8",
+  "inputs": {
+    "resume_path": "examples/resume.md",
+    "repo_path": "./examples/candidate_repo",
+    "role": "",
+    "file_type": "md",
+    "language": "zh"
+  },
+  "resume": {
+    "candidate_name": "RISC-V CPU",
+    "skills": [
+      "RISC-V",
+      "AXI",
+      "Verilog",
+      "SystemVerilog"
+    ],
+    "projects": [
+      {
+        "name": "AXI Interconnect",
+        "summary": "负责 AXI slave 接口与简单互联设计，完成基本读写通路联调。",
+        "claims": [
+          "负责 AXI slave 接口与简单互联设计，完成基本读写通路联调。"
+        ],
+        "keywords": [
+          "AXI"
+        ]
+      }
+    ]
+  },
+  "profile": {
+    "industry": "数字IC / SoC",
+    "focus": [
+      "微架构"
+    ],
+    "secondary_focus": [
+      "RTL实现"
+    ],
+    "question_mix": {
+      "project": 0.6,
+      "fundamentals": 0.4
+    },
+    "reasons": [
+      "Matched keywords for Digital Design: risc-v, axi, rtl, verilog"
+    ]
+  },
+  "confirmed": true,
+  "repo_index": {
+    "files": [
+      "rtl/cpu_top.sv"
+    ],
+    "symbols": [
+      "rtl/cpu_top.sv:cpu_top"
+    ],
+    "topics": [],
+    "indexed": true,
+    "file_count": 1,
+    "sample_files": [
+      "rtl/cpu_top.sv"
+    ],
+    "repo_path": "examples/candidate_repo"
+  },
+  "questions": [
+    {
+      "id": "Q1",
+      "type": "architecture",
+      "project": "AXI Interconnect",
+      "topic": "AXI总线",
+      "question": "在项目《AXI Interconnect》中，你当时的整体设计目标是什么？围绕 AXI总线 你比较过哪些方案，最终为什么选择当前方案？各个模块是如何划分的，关键权衡点又是什么？"
+    }
+  ],
+  "qa_log": [
+    {
+      "question": {
+        "id": "Q1",
+        "type": "architecture",
+        "project": "AXI Interconnect",
+        "topic": "AXI总线",
+        "question": "在项目《AXI Interconnect》中，你当时的整体设计目标是什么？围绕 AXI总线 你比较过哪些方案，最终为什么选择当前方案？各个模块是如何划分的，关键权衡点又是什么？"
+      },
+      "answer": "俄呢呢嫩",
+      "evaluation": {
+        "summary": "回答提供了有效信息，可以继续追问细节。",
+        "strengths": [
+          "给出了有效回答。"
+        ],
+        "gaps": [
+          "回答偏简略，缺少项目细节"
+        ],
+        "anchors": [
+          "简历: 项目 AXI Interconnect",
+          "简历: 主张 负责 AXI slave 接口与简单互联设计，完成基本读写通路联调。",
+          "知识点: AXI总线 权衡"
+        ],
+        "standard_answer": "一个较强的回答应该说明 AXI总线 的设计目标，比较至少两种架构方案，解释模块边界为什么这样划分，并讨论时延、复杂度或验证成本上的权衡。",
+        "memorization_answer": "我当时先明确了 AXI总线 的目标，再比较了几种架构方案，最后选了综合权衡更好的方案，并把模块边界按联调和验证更容易的方式划分。"
+      }
+    }
+  ],
+  "report_path": "out/interview_report.md"
+}
